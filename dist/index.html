@@ -14,7 +14,10 @@
         <template>
             <agile>
                 <div class="Slide" v-for="(Song, s) in Songs">
-                    <div class="Icon"><span>“</span></div>
+                    <div class="Icon">
+                        <span v-if="!Song.showVideo">“</span>
+                        <span v-if="Song.showVideo" class="PlayIcon">▶</span>
+                    </div>
                     <div class="QuoteSlide">
                         <div v-if="!Song.showVideo" class="Quote" v-html="Song.lyrics"></div>
                         <iframe v-if="Song.showVideo" height="315" 

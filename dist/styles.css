@@ -59,6 +59,12 @@ h1 {
   left: calc(50% - 46px);
 }
 
+.Icon span.PlayIcon {
+  font-size: 56px;
+  top: unset;
+  left: unset;
+}
+
 .QuoteSlide {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -206,5 +212,11 @@ h1 {
 
 .agile__dot--current button, .agile__dot:hover button {
   background-color: #888;
+}
+
+@media only screen and (max-width: 1000px) {
+  .QuoteSlide {
+    width: 60vw;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
