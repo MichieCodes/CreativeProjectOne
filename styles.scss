@@ -60,6 +60,12 @@ h1 {
         top: calc(2.5rem - 16px);
         left: calc(50% - 46px);
     }
+    span.PlayIcon {
+        font-size: 56px;
+        // top: 1px;
+        top: unset;
+        left: unset;
+    }
 }
 
 .QuoteSlide {
@@ -189,5 +195,11 @@ h1 {
                 background-color: #888
             }
         }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .QuoteSlide {
+        width: 60vw;
     }
 }
