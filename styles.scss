@@ -1,0 +1,193 @@
+$BackgroundColor: #3A3242;
+$AccentColor: #610F6F;
+$AccentColorLight: #77008A;
+$QuoteBackground: #E6DDE9;
+$QuoteBackgroundLight: #FDF9FF;
+$TextColor: #000;
+$TextColorLight: #fff;
+$ButtonGradient: linear-gradient(to bottom right, $AccentColorLight 0%, $AccentColor 100%);
+$ButtonGradientHover: linear-gradient(to bottom right, lighten($AccentColorLight, 2) 0%, lighten($AccentColor, 2) 100%);
+$ButtonShadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+$BorderRadius: 10px;
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Kufam", Arial, Helvetica, sans-serif;
+    color: $TextColor;
+    background: radial-gradient(circle, transparentize($BackgroundColor, 0.1) 0%, $BackgroundColor 100%);
+}
+
+#app {
+    width: 100vw;
+}
+
+.Slide {
+    height: min-content;
+}
+
+h1 {
+    margin: 20px 0 10px;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.4), 0px 4px 6px rgba(0, 0, 0, 0.5);
+    color: $TextColorLight;
+}
+
+.Icon {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    margin: auto;
+    font-size: 70px;
+    font-family: Kufam;
+    font-style: italic;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+    color: $TextColorLight;
+    background: linear-gradient(to bottom right, lighten($AccentColorLight, 10) 0%, $AccentColor 80%);
+    z-index: 10;
+
+    span {
+        position: relative;
+        top: calc(2.5rem - 16px);
+        left: calc(50% - 46px);
+    }
+}
+
+.QuoteSlide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 35vw;
+    height: 100%;
+    top: -2.5rem;
+    margin: auto;
+    height: 32rem;
+    max-height: 32rem;
+    border-radius: $BorderRadius;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.75);
+    background: $QuoteBackground;
+
+    iframe {
+        margin: 60px 20px 20px;
+    }
+}
+
+.Quote {
+    margin: 20px;
+    margin-top: 60px;
+    font-size: 22px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $QuoteBackgroundLight
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $AccentColor; 
+        transition: background 0.15s ease-in-out;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: lighten($AccentColor, 10); 
+    }
+
+    b {
+        font-weight: 600;
+        font-style: italic;
+        color: $AccentColor;
+        text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15), 0 0 3px transparentize(lighten($AccentColorLight, 10), 0.5);
+    }
+}
+
+.InfoBar {
+    padding: 20px;
+    text-align: center;
+    border-radius: $BorderRadius;
+    background: $QuoteBackgroundLight;
+}
+.InfoBar p {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.InfoBar p> span {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+}
+.InfoBar button {
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+    font-size: 18px;
+    border: 0;
+    font-family: "Kufam", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+    border-radius: $BorderRadius;
+    color: $TextColorLight;
+    background: $ButtonGradient;
+
+    &:hover {
+        background: $ButtonGradientHover;
+    }
+}
+
+
+.agile {
+    width: 80vw;
+    margin: auto;
+
+	&__actions {margin-top: -1.25rem;}
+
+	&__nav-button {
+		background: transparent;
+		border: none;
+		color: #ccc;
+		cursor: pointer;
+		font-size: 24px;
+		transition-duration: .3s;
+
+		&:hover {
+            color: #888;
+        }
+    }
+
+	&__dot {
+		margin: 0 10px;
+
+		button {
+			background-color: #eee;
+			border: none;
+			border-radius: 50%;
+			cursor: pointer;
+			display: block;
+			height: 10px;
+			font-size: 0;
+			line-height: 0;
+			margin: 0;
+			padding: 0;
+			transition-duration: .3s;
+            width: 10px;
+        }
+
+		&--current, &:hover {
+			button {
+                background-color: #888
+            }
+        }
+    }
+}

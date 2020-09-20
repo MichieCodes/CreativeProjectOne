@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Project 1</title>
+    <link rel="stylesheet" href="https://unpkg.com/vue-agile@1.1.3/dist/VueAgile.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>Romeo & Juliet References In Music</h1>
+        <template>
+            <agile>
+                <div class="Slide" v-for="(Song, s) in Songs">
+                    <div class="Icon"><span>“</span></div>
+                    <div class="QuoteSlide">
+                        <div v-if="!Song.showVideo" class="Quote" v-html="Song.lyrics"></div>
+                        <iframe v-if="Song.showVideo" height="315" 
+                            v-bind:src="Song.link" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                        <div class="InfoBar">
+                            <p>
+                                {{Song.artist}}
+                                <span>{{Song.songTitle}}</span>
+                            </p>
+                            <button @click.prevent="toggleVideo(s)" ref="videoToggle">View Video</button>
+                        </div>
+                    </div>
+                </div>
+            </agile>
+        </template>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-agile@1.1.3/dist/VueAgile.umd.min.js"></script>
+
+    <script>
+        var Songs = [
+            {
+                artist: "Mayday Parade",
+                songTitle: "Without The Bitter, The Sweet Isn't As Sweet", 
+                lyrics: "Maybe it will all work out like in the movies, but I know <b>Romeo</b> must die before the ending. With a final poison kiss delivered gently because you don't get lucky twice, and that's the truth... And even if it's dark, at least we'll be together. Slowly sinking in the earth to lay forever. You better grab a hold and hold on for your life because you don't get lucky twice",
+                link: "https://www.youtube.com/embed/5VkrxEcbpPs",
+                showVideo: false
+            },
+            {
+                artist: "Amir Obè",
+                songTitle: "Romeo/Juliet", 
+                lyrics: "My baby don’t cry no more. Roses die before you seen 'em, yeah. Double meaning, yeah. What's love without the feeling, yeah? Prophecy tell me I’ma die in a 'rari. Black tux, runaway bride, I'm sorry / I cross my heart and hope you die with me. <b>Romeo, Juliet</b>, Look at what I did. Looking like a movie set, look at what I did",
+                link: "https://www.youtube.com/embed/8OWZX-fmglo",
+                showVideo: false
+            },
+            {
+                artist: "We The Kings",
+                songTitle: "Check Yes, Juliet", 
+                lyrics: "Check yes, <b>Juliet</b>, I'll be waiting. Wishing, wanting yours for the taking. Just sneak out and don't tell a soul goodbye. Check yes, Juliet, here's the countdown: 3, 2, 1, now fall in my arms now. They can change the locks, don't let them change your mind... They'll tear us apart if you give them the chance. Don't sell your heart, don't say we're not meant to be. Run baby run, forever we'll be you and me",
+                link: "https://www.youtube.com/embed/NnilaaFrza4",
+                showVideo: false
+            },
+            {
+                artist: "BTS",
+                songTitle: "Let Me Know", 
+                lyrics: "Girl Let Me know. 함께한 다짐 어디로 시간과 함께 사라지고. 이별의 힘에 무너진 도미노. 마치 <b>줄리엣 & 로미오</b>. 너무 뜨겁게 널 좋아한건지? 너와 내 온기가 안 식혀지지. 이제와 돌이켜 너와의 필름<br/>Translation:<br/>Girl Let Me know. The promises we made disappeared with the time we spent together. The dominos have fallen with our breakup. Like <b>Juliet and Romeo</b>. Did I like you too much? The heat between me and you won’t cool down. Now I look back at the film with you and I",
+                link: "https://www.youtube.com/embed/LVoDcb6JcbE",
+                showVideo: false
+            },
+            {
+                artist: "My Chemical Romance",
+                songTitle: "The Sharpest Lives", 
+                lyrics: "<b>Juliet</b> loves the beat and the lust it commands. Drop the dagger and lather the blood on your hands, <b>Romeo</b>. I've really been on a bender and it shows. So, why don't you blow me a kiss, before she goes? Give me a shot to remember, and you can take all the pain away from me. Your kiss and I will surrender",
+                link: "https://www.youtube.com/embed/73Y_x30uKQg",
+                showVideo: false
+            }
+        ];
+
+        Vue.use(VueAgile);
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                agile: VueAgile,
+            },
+            data: {
+                message: 'Hello Vue!',
+                Songs: Songs
+            },
+            methods: {
+                toggleVideo: function(index){
+                    this.Songs[index].showVideo = !this.Songs[index].showVideo;
+                    this.$refs.videoToggle[index + 5].innerText = !this.Songs[index].showVideo ? "View Video" : "View Lyrics";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

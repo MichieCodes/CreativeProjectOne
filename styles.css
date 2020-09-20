@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Kufam", Arial, Helvetica, sans-serif;
+  color: #000;
+  background: radial-gradient(circle, rgba(58, 50, 66, 0.9) 0%, #3A3242 100%);
+}
+
+#app {
+  width: 100vw;
+}
+
+.Slide {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+h1 {
+  margin: 20px 0 10px;
+  font-style: italic;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.4), 0px 4px 6px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.Icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  margin: auto;
+  font-size: 70px;
+  font-family: Kufam;
+  font-style: italic;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right bottom, from(#a300bd), color-stop(80%, #610F6F));
+  background: linear-gradient(to bottom right, #a300bd 0%, #610F6F 80%);
+  z-index: 10;
+}
+
+.Icon span {
+  position: relative;
+  top: calc(2.5rem - 16px);
+  left: calc(50% - 46px);
+}
+
+.QuoteSlide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  width: 35vw;
+  height: 100%;
+  top: -2.5rem;
+  margin: auto;
+  height: 32rem;
+  max-height: 32rem;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.75);
+  background: #E6DDE9;
+}
+
+.QuoteSlide iframe {
+  margin: 60px 20px 20px;
+}
+
+.Quote {
+  margin: 20px;
+  margin-top: 60px;
+  font-size: 22px;
+  overflow: auto;
+}
+
+.Quote::-webkit-scrollbar {
+  width: 10px;
+}
+
+.Quote::-webkit-scrollbar-track {
+  background: #FDF9FF;
+}
+
+.Quote::-webkit-scrollbar-thumb {
+  background: #610F6F;
+  -webkit-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+
+.Quote::-webkit-scrollbar-thumb:hover {
+  background: #88159c;
+}
+
+.Quote b {
+  font-weight: 600;
+  font-style: italic;
+  color: #610F6F;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15), 0 0 3px rgba(163, 0, 189, 0.5);
+}
+
+.InfoBar {
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background: #FDF9FF;
+}
+
+.InfoBar p {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.InfoBar p > span {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.InfoBar button {
+  cursor: pointer;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+  border: 0;
+  font-family: "Kufam", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right bottom, from(#77008A), to(#610F6F));
+  background: linear-gradient(to bottom right, #77008A 0%, #610F6F 100%);
+}
+
+.InfoBar button:hover {
+  background: -webkit-gradient(linear, left top, right bottom, from(#800094), to(#691078));
+  background: linear-gradient(to bottom right, #800094 0%, #691078 100%);
+}
+
+.agile {
+  width: 80vw;
+  margin: auto;
+}
+
+.agile__actions {
+  margin-top: -1.25rem;
+}
+
+.agile__nav-button {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 24px;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.agile__nav-button:hover {
+  color: #888;
+}
+
+.agile__dot {
+  margin: 0 10px;
+}
+
+.agile__dot button {
+  background-color: #eee;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  height: 10px;
+  font-size: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  width: 10px;
+}
+
+.agile__dot--current button, .agile__dot:hover button {
+  background-color: #888;
+}
+/*# sourceMappingURL=styles.css.map */
