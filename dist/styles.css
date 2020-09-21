@@ -61,8 +61,9 @@ h1 {
 
 .Icon span.PlayIcon {
   font-size: 56px;
-  top: unset;
-  left: unset;
+  font-style: normal;
+  left: 5px;
+  top: 5px;
 }
 
 .QuoteSlide {
